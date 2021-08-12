@@ -1,0 +1,9 @@
+26/07/2021 19:05:42  - https://www.alura.com.br- online: true
+26/07/2021 19:05:43  - https://www.mercadolivre.com.br- online: true
+26/07/2021 19:05:44  - https://random-status-code.herokuapp.com- online: true
+26/07/2021 19:05:49  - https://www.alura.com.br- online: true
+26/07/2021 19:05:49  - https://www.mercadolivre.com.br- online: true
+26/07/2021 19:05:50  - https://random-status-code.herokuapp.com- online: false
+26/07/2021 19:05:56  - https://www.alura.com.br- online: true
+26/07/2021 19:05:56  - https://www.mercadolivre.com.br- online: true
+26/07/2021 19:05:57  - https://random-status-code.herokuapp.com- online: false
