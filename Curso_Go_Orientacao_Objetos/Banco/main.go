@@ -12,6 +12,7 @@ type ContaCorrente struct {
 }
 
 func main() {
+	// Primeira maneira de se instanciar um objeto
 	contaDoGuilherme := ContaCorrente{
 		titular:       "Guilherme",
 		numeroAgencia: 589,
@@ -26,9 +27,36 @@ func main() {
 		saldo:         200,
 	}
 
+	// Segunda maneira de se instanciar um objeto - Mais utilizada
 	contaDoHugo := ContaCorrente{"Hugo", 333, 111333, 300}
 
 	fmt.Println(contaDoGuilherme)
 	fmt.Println(contaDaBruna)
 	fmt.Println(contaDoHugo)
+
+	// Terceira maneira de se instanciar um Objeto
+	var contaDaCris *ContaCorrente
+	contaDaCris = new(ContaCorrente)
+	contaDaCris.titular = "Cris"
+	contaDaCris.saldo = 500
+
+	// Comparando contas
+	fmt.Println("Comparando contas")
+	contaJoao1 := ContaCorrente{"Joao", 444, 111444, 400}
+	contaJoao2 := ContaCorrente{"Joao", 444, 111444, 400}
+
+	fmt.Println(contaJoao1 == contaJoao2) // Resultado será true
+
+	contaDaBruna2 := ContaCorrente{"Bruna", 222, 111222, 200}
+
+	fmt.Println(contaDaBruna == contaDaBruna2) // Resultado será true
+
+	var contaDaCris2 *ContaCorrente
+	contaDaCris2 = new(ContaCorrente)
+	contaDaCris2.titular = "Cris"
+	contaDaCris2.saldo = 500
+
+	fmt.Println(contaDaCris == contaDaCris2)   // Resultado será false! Pois os endereços na memória são diferentes
+	fmt.Println(*contaDaCris == *contaDaCris2) // O resultado será true, pois agora estamos comparando o conteúdo
+
 }
