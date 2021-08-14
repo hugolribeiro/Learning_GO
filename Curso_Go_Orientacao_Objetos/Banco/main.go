@@ -11,7 +11,34 @@ type ContaCorrente struct {
 	saldo         float64
 }
 
+// Sacar Esse c *ContaCorrente  é o referente ao "this" em outras linguagens
+func (c *ContaCorrente) Sacar(valorDoSaque float64) string {
+	podeSacar := valorDoSaque > 0 && valorDoSaque <= c.saldo
+	if podeSacar {
+		c.saldo -= valorDoSaque
+		return "Saque realizado com sucesso"
+	} else {
+		return "Saldo Insuficiente"
+	}
+}
+
 func main() {
+	contaDaSilvia := ContaCorrente{}
+	contaDaSilvia.titular = "Silvia"
+	contaDaSilvia.saldo = 500
+
+	fmt.Println(contaDaSilvia)
+
+	valorDoSaque := 200.0
+	fmt.Println(contaDaSilvia.Sacar(valorDoSaque))
+
+	valorDoSaque = 800
+	fmt.Println(contaDaSilvia.Sacar(valorDoSaque))
+}
+
+func TestandoObjetos() {
+	// Apenas testando criações e comparações de objetos
+	fmt.Println("---------------- TESTES ---------------------")
 	// Primeira maneira de se instanciar um objeto
 	contaDoGuilherme := ContaCorrente{
 		titular:       "Guilherme",
