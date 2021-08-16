@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Curso_Go_Orientacao_Objetos.iml" filepath="$PROJECT_DIR$/Curso_Go_Orientacao_Objetos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabalhandoComFuncoes/TrabalhandoComFuncoes.iml" filepath="$PROJECT_DIR$/TrabalhandoComFuncoes/TrabalhandoComFuncoes.iml" />
     </modules>
   </component>
 </project>
