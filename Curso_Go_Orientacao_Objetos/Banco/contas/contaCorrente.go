@@ -5,10 +5,9 @@ import "Curso_Go_Orientacao_Objetos/Banco/clientes"
 // Uma estrutura se assemelha ao conceito de Classe em POO
 
 type ContaCorrente struct {
-	Titular       clientes.Titular
-	NumeroAgencia int
-	NumeroConta   int
-	saldo         float64
+	Titular                    clientes.Titular
+	NumeroAgencia, NumeroConta int
+	saldo                      float64
 }
 
 // Sacar Esse c *ContaCorrente  é o referente ao "this" em outras linguagens

@@ -13,6 +13,12 @@ func main() {
 
 	fmt.Println(contaExemplo.ObterSaldo())
 
+	contaDoDenis := contas.ContaPoupanca{}
+	contaDoDenis.Depositar(150)
+	contaDoDenis.ObterSaldo()
+
+	fmt.Println(contaDoDenis)
+
 }
 
 //func TestandoObjetos() {
