@@ -1,0 +1,16 @@
+Para gerar o arquivo modulo devemos usar o comando "go build"
+
+Para gerar o arquivo go.mod usamos o comando "go mod init modulo"
+
+Em Go praticamente só temos dois escopos para variáveis, structs e métodos:
+
+- protected
+    Visível apenas dentro do próprio pacote. Está com a letra inicial Maiúscula.
+
+- public
+    Visível para fora do pacote atual. Está com a letra inicial minúscula
+
+
+Para instalar um pacote externo, temos que ir até o diretório raiz e usar o comando "go get nomedopacote"
+
+Para remover as dependências que não estão sendo usadas, basta executar o comando "go mod tidy"
