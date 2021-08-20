@@ -39,4 +39,20 @@ func main() {
 	fmt.Println(reflect.TypeOf(slice))
 	fmt.Println(reflect.TypeOf(array3))
 
+	// Arrays Internos
+	// A função make exige 3 parâmetros: o tipo, tamanho e capacidade
+	fmt.Println("-------- Arrays Internos ---------")
+	slice3 := make([]float32, 10, 11)
+	fmt.Println(slice3)
+	fmt.Println(len(slice3)) // tamanho atual
+	fmt.Println(cap(slice3)) // capacidade
+
+	slice3 = append(slice3, 5)
+	fmt.Println(cap(slice3))
+	slice3 = append(slice3, 10) // quando estouramos a capacidade do slice, o Go dobrará a capacidade
+	fmt.Println(cap(slice3))
+
+	// podemos criar um slice sem declarar a capacidade, assim, a capacidade será igual ao tamanho dele
+	slice4 := make([]float32, 5)
+	fmt.Println(cap(slice4))
 }
