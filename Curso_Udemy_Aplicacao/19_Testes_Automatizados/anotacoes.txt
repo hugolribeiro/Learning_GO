@@ -8,3 +8,25 @@ A função de teste começa sempre com Test e recebe como parâmetro um ponteiro
 Exemplo: func TestTipoDeEndereco(t *testing.T)
 
 Para rodar os testes, basta ir no diretório do teste e digitar: "go test"
+
+Para rodar TODOS os testes de todos os pacotes, digite "go test ./..."
+
+O comando "go test -v" rodará o teste de maneira verbosa
+
+t.Parallel()  na primeira linha do teste fará com que ele rode em paralelo com outros testes que tenham t.Parallel()
+
+------------------
+COVERAGE
+para ver o coverage, digite "go test --cover"
+
+É possível gerar um arquivo de txt com coverage. digite "go test --coverprofile cobertura.txt"
+
+Para ler o arquivo gerado, podemos usar o comando "go tool cover --func=nomedoarquivo.txt"
+
+Para ler o arquivo com mais detalhes, podemos usar o comando "go tool cover --html=cobertura.txt"
+
+-------------------
+
+Podemos usar o Errorf ou o Fatalf
+O Fatalf vai parar o programa assim que for acionado a primeira vez
+Já o Errorf vai executar até o final do programa
