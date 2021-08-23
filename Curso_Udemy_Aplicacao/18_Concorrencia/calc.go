@@ -6,10 +6,11 @@ import (
 
 func main() {
 
-	go fmt.Println(soma(5, 2))
-	go fmt.Println(subtracao(5, 2))
-	go fmt.Println(mult(3, 2))
-	go fmt.Println(div(10, 2))
+	go func() { fmt.Println(soma(5, 2)) }()
+	go func() { fmt.Println(subtracao(5, 2)) }()
+	go func() { fmt.Println(mult(3, 2)) }()
+	go func() { fmt.Println(div(10, 2)) }()
+	fmt.Println("Operações")
 }
 
 func div(i int, i2 int) int {

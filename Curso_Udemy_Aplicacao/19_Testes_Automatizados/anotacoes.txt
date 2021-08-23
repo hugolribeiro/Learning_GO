@@ -1,0 +1,10 @@
+O pacote que nos ajuda a testar é o testing
+
+Para testar precisamos criar o arquivo de teste no mesmo pacote que o arquivo a ser testado
+
+O nome do arquivo de teste deve terminar com _test.go
+
+A função de teste começa sempre com Test e recebe como parâmetro um ponteiro do tipo t testing.
+Exemplo: func TestTipoDeEndereco(t *testing.T)
+
+Para rodar os testes, basta ir no diretório do teste e digitar: "go test"
