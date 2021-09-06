@@ -15,8 +15,12 @@ func Ola(name string, idioma string) string {
 	if name == "" {
 		name = "Mundo"
 	}
-	prefixo := prefixoOlaPortugues
 
+	return fmt.Sprintf("%s%s", prefixoDeSaudacao(idioma), name)
+
+}
+
+func prefixoDeSaudacao(idioma string) (prefixo string) {
 	switch idioma {
 	case frances:
 		prefixo = prefixoOlaFrances
@@ -24,9 +28,10 @@ func Ola(name string, idioma string) string {
 		prefixo = prefixoOlaEspanhol
 	case alemao:
 		prefixo = prefixoOlaAlemao
+	default:
+		prefixo = prefixoOlaPortugues
 	}
-
-	return fmt.Sprintf("%s%s", prefixo, name)
+	return prefixo
 }
 
 func main() {
