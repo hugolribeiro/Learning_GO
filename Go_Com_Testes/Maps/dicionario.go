@@ -3,8 +3,9 @@ package maps
 type Dicionario map[string]string
 
 const (
-	ErrNaoEncontrado    = ErrDicionario("não foi possível encontrar a palavra que você procura")
-	ErrPalavraExistente = ErrDicionario("não é possível adicionar a palavra pois ela já existe")
+	ErrNaoEncontrado      = ErrDicionario("não foi possível encontrar a palavra que você procura")
+	ErrPalavraExistente   = ErrDicionario("não é possível adicionar a palavra pois ela já existe")
+	ErrPalavraInexistente = ErrDicionario("não foi possível atualizar a palavra, pois ela Não existe")
 )
 
 type ErrDicionario string
@@ -29,6 +30,19 @@ func (d Dicionario) Adiciona(palavra string, definicao string) error {
 		d[palavra] = definicao
 	case nil:
 		return ErrPalavraExistente
+	default:
+		return err
+	}
+	return nil
+}
+
+func (d Dicionario) Atualiza(palavra, definicao string) error {
+	_, err := d.Busca(palavra)
+	switch err {
+	case ErrNaoEncontrado:
+		return ErrPalavraInexistente
+	case nil:
+		d[palavra] = definicao
 	default:
 		return err
 	}
