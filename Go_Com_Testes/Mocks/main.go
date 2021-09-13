@@ -7,19 +7,34 @@ import (
 	"time"
 )
 
-const inicioContagem = 3
-const ultimaPalavra = "Vai!"
+// Sleeper te permite definir pausas
+type Sleeper interface {
+	Pausa()
+}
 
-func Contagem(saida io.Writer) {
+// SleeperPadrao é uma implementação de Sleeper com um atraso pré-definido
+type SleeperPadrao struct{}
+
+// Pausa vai pausar a execução pela Duração definida
+func (d *SleeperPadrao) Pausa() {
+	time.Sleep(1 * time.Second)
+}
+
+const ultimaPalavra = "Vai!"
+const inicioContagem = 3
+
+// Contagem imprime uma contagem de 3 para a saída com um atraso determinado por um Sleeper
+func Contagem(saida io.Writer, sleeper Sleeper) {
 	for i := inicioContagem; i > 0; i-- {
-		time.Sleep(1 * time.Second)
+		sleeper.Pausa()
 		fmt.Fprintln(saida, i)
 	}
-	time.Sleep(1 * time.Second)
-	fmt.Fprint(saida, ultimaPalavra)
 
+	sleeper.Pausa()
+	fmt.Fprint(saida, ultimaPalavra)
 }
 
 func main() {
-	Contagem(os.Stdout)
+	sleeper := &SleeperPadrao{}
+	Contagem(os.Stdout, sleeper)
 }
